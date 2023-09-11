@@ -4,6 +4,7 @@ import { matchLoginCredential } from '../../../Store/Slices/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Login = () => {
+  const [showCredentials,setShowCredentials] = useState(false)
   const dispatch = useDispatch()
   const [loginCredentials, setLoginCredentials] = useState({
     email: '',
@@ -25,12 +26,31 @@ const Login = () => {
     e.preventDefault();
     dispatch(matchLoginCredential(loginCredentials))
   };
+  const users = useSelector(state=>state.user.users)
+  
   return (
     <>
     <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 h-screen overflow-hidden'>
       <div className='flex w-full h-full items-center justify-center'>
         <form onSubmit={handleSubmit} className='block space-y-8 p-12 w-full'>
+          <span className='inline-flex items-center justify-between w-full'>
           <p className='font-bold text-2xl'>Sign In</p>
+          <span className='block relative'>
+          <i onClick={()=>{setShowCredentials(p=>!p)}} className='bx bx-message-alt-error'></i>
+          <span className={`absolute bg-white top-4 p-4 rounded-lg shadow right-0 space-y-4 duration-500 ${showCredentials ? 'visible translate-y-0 opacity-100' : 'opacity-0 invisible translate-y-8'}`}>
+            {users.map((item,idx)=>{
+              return(
+                <>
+              <span className='block'>
+              <p className='font-semibold text-[12px]'>{item.email}</p>
+              <p className='font-light text-[10px]'>{item.password}</p>
+              </span>
+                </>
+              )
+            })}
+          </span>
+          </span>
+          </span>
           <p className='font-bold text-sm text-gray-600'>Hurry Up! Grab your clothing</p>
           <span className='block space-y-6'>
             <input onChange={handleLoginCredentials} name='email' type="text" placeholder='Enter Email' className='outline-none bg-green-500/10 w-full p-3 rounded-sm text-sm' />

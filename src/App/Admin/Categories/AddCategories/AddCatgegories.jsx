@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 const AddCategories = () => {
     const [category,setCategory] = useState({
         id:new Date().getSeconds(),
-        catgeory:'',
+        type:'',
         description:''
     })
     const handleInputChange = (e) => {
@@ -47,7 +47,7 @@ const AddCategories = () => {
                 <span className='space-y-2 w-full'>
                     <p className='font-medium text-[12px]' >Catgeory Name</p>
                     <span className='block space-y-1'>
-                    <input onChange={handleInputChange} value={category.catgeory} name='catgeory' type="text" placeholder='Catgeory Name' className='font-medium outline-none focus:outline-none text-sm p-3 rounded-sm ring-1 ring-black/5 w-full' />
+                    <input onChange={handleInputChange} value={category.type} name='type' type="text" placeholder='Category Name' className='font-medium outline-none focus:outline-none text-sm p-3 rounded-sm ring-1 ring-black/5 w-full' />
                         <p className='font-medium text-gray-400 text-[10px]'>A Catgeory name is required and recommended to be unique.</p>
                     </span>
                 </span>

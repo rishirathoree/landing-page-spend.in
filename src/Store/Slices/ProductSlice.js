@@ -4,42 +4,52 @@ const initialState = {
     categories:[
         {
             "type": "Terracotta Pot",
+            "id":1211,
             "description": "A classic clay pot known for its porous nature, ideal for many types of plants."
         },
         {
             "type": "Ceramic Planter",
+            "id":134211,
             "description": "Elegant and often decorative, ceramic pots come in various colors and designs."
         },
         {
             "type": "Concrete Planter",
+            "id":112211,
             "description": "Sturdy and durable, concrete pots are great for outdoor use and modern aesthetics."
         },
         {
             "type": "Plastic Pot",
+            "id":122411,
             "description": "Lightweight and affordable, plastic pots are available in various sizes and colors."
         },
         {
             "type": "Wooden Planter",
+            "id":2243,
             "description": "Rustic and charming, wooden planters are often used for herbs and flowers."
         },
         {
             "type": "Metal Planter",
+            "id":13434211,
             "description": "Sleek and contemporary, metal pots are suitable for both indoor and outdoor settings."
         },
         {
             "type": "Ceramic Glazed Pot",
+            "id":12143421,
             "description": "Ceramic pots with a glossy glaze for a stylish and colorful appearance."
         },
         {
             "type": "Hanging Basket",
+            "id":1213411,
             "description": "Typically made of wire or woven materials, used for suspended plants."
         },
         {
             "type": "Fiberglass Planter",
+            "id":14221211,
             "description": "Lightweight and versatile, fiberglass pots come in various shapes and sizes."
         },
         {
             "type": "Stone Planter",
+            "id":1242432211,
             "description": "Natural stone pots add a touch of elegance and are often used for larger plants."
         }
     ],
@@ -135,9 +145,23 @@ const productsSlice = createSlice({
         console.log(typeof productId)
         const filteredProducts = state.storeProducts.filter(item=>item.id !== productId)
         return {...state,storeProducts: filteredProducts,};
-     }
+     },
+     deleteCategory:(state,action)=>{
+        const categoryId = action.payload
+        console.log(categoryId)
+        const filterCatgeory = state.categories.filter(item=>item.id !== categoryId)
+        return {...state,categories:filterCatgeory}
+     },
+     updateCategory:(state,action)=>{
+        const updatedProductValues = action.payload
+        const findExistingCategoryToUpdate = state.categories.findIndex(ctgy=>ctgy.id === updatedProductValues.id)
+        console.log(findExistingCategoryToUpdate)
+        if(findExistingCategoryToUpdate !== -1){
+            state.categories[findExistingCategoryToUpdate] = updatedProductValues
+        }
     }
+   }
 })
 
-export const {addProducts,deleteProduct,addCategory} = productsSlice.actions
+export const {addProducts,deleteProduct,addCategory,deleteCategory,updateCategory} = productsSlice.actions
 export default productsSlice.reducer

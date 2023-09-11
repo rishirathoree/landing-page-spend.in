@@ -9,6 +9,8 @@ import AddProducts from "./Products/AddProducts/AddProducts";
 import DeleteProducts from "./Products/DeleteProducts/DeleteProducts";
 import AddCategories from "./Categories/AddCategories/AddCatgegories";
 import ViewCategories from "./Categories/ViewCategories/ViewCategories";
+import DeleteCategories from "./Categories/DeleteCategories/DeleteCategories";
+import EditCategories from "./Categories/EditCategories/EditCategories";
 
 const AdminRoutes = () => {
   
@@ -27,6 +29,8 @@ const AdminRoutes = () => {
             <Route path="/products/delete-products" element={<DeleteProducts />} />
             <Route path="/products/add-category" element={<AddCategories />} />
             <Route path="/products/view-category" element={<ViewCategories />} />
+            <Route path="/products/delete-category" element={<DeleteCategories />} />
+            <Route path="/products/edit-category/:id" element={<EditCategories />} />
             
             
           </Routes>

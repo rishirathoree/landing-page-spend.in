@@ -1,9 +1,10 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { Link, NavLink } from 'react-router-dom'
-const ViewCategories = () => {
-    const category = useSelector(state=>state.product.categories)
-    
+import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { deleteCategory } from '../../../../Store/Slices/ProductSlice'
+const DeleteCategories = () => {
+    const products = useSelector(state=>state.product.categories)
+    const dispatch = useDispatch()
   return (
     <>
     <div className='p-8'>
@@ -25,7 +26,7 @@ const ViewCategories = () => {
                 </tr>
             </thead>
             <tbody>
-            {category.map((item,idx)=>{
+            {products.map((item,idx)=>{
                 return(
                     <>
                     <tr className='flex items-center justify-between w-full p-4 border-y-[1px] border-gray-400/10 border-dashed'>
@@ -40,27 +41,8 @@ const ViewCategories = () => {
                         </span>
                     </td>
                     <td className='w-[100px]'><p className='font-semibold text-gray-500 text-sm'>{Math.floor(Math.random() * 5 + 1)}</p></td>
-                    <td className='w-[100px] flex items-center justify-center'>
-                        <span className='relative'>
-                            <div className='group'>
-                            <span className='peer/item flex items-center space-x-4 p-2 rounded-sm bg-gray-300/20'>
-                                <p className='font-semibold text-gray-500 text-[12px]'>Actions</p>
-                                <i className='bx bx-chevron-down group-hover:rotate-180 duration-500'></i>
-                            </span>
-                            <span className='absolute rounded-lg group-hover:opacity-100 invisible group-hover:visible duration-500 translate-y-4 group-hover:translate-y-0 opacity-0 z-50 top-11 right-0 w-full bg-white shadow'>
-                            <NavLink to={`/products/edit-category/${item.id}`}>
-                                <span className='flex items-center space-x-4 p-2 rounded-sm justify-between'>
-                                <p className='font-semibold text-gray-500 text-[12px]'>Edit</p>
-                                <i className='bx bx-pencil'></i>
-                            </span>
-                            </NavLink>
-                            <span className='flex items-center space-x-4 p-2 rounded-sm justify-between'>
-                                <p className='font-semibold text-gray-500 text-[12px]'>Delete</p>
-                                <i className='bx bx-x'></i>
-                            </span>
-                            </span>
-                            </div>
-                        </span>
+                    <td className='w-[100px] flex items-start justify-start'>
+                        <i onClick={()=>{dispatch(deleteCategory(item.id))}} className='bx bx-trash'></i>
                     </td>
                 </tr>
                     </>
@@ -74,4 +56,4 @@ const ViewCategories = () => {
   )
 }
 
-export default ViewCategories
+export default DeleteCategories
