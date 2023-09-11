@@ -14,7 +14,41 @@
         transform: translateX(300%);
     }
 }
+/* *{border: 2px solid red;} */
+/* ::-webkit-scrollbar{
+    width: 2px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(93, 93, 93);
+}
+::-webkit-scrollbar-track{
+    background-color: gray;
+} */
+.dash-width{
+    width: calc(100% - 15rem);
+}
 .before\:shimmer::before {
     content: var(--tw-content);
     animation: shimmer 1s infinite;
 }
+.bounce-effect{
+    transition: all 700ms cubic-bezier(.47,1.64,.41,.8);
+}
+.width-nav{width: calc(100% - 50px);}
+.hero-banner{
+    background-image: url('../src/assets/images/hero-banner.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 40%;
+    background-size: cover;
+}
+::-webkit-scrollbar{
+    width: 4px;
+}
+::-webkit-scrollbar-thumb{
+    background: #838383;
+}
+::-webkit-scrollbar-track{
+    background: rgb(179, 179, 179);
+}
+/* *{border: 1px solid red;} */
