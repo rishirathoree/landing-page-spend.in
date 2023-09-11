@@ -1,5 +1,5 @@
 import React from 'react'
-import banner from '../../../../assets/images/frame 1.png'
+import banner from '../../../../assets/images/banner2.png'
 const Swiper = () => {
   const dots = Array(3).fill(1)
   return (
