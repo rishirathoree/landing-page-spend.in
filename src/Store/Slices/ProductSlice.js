@@ -3,128 +3,272 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     categories:[
         {
-            "type": "Terracotta Pot",
-            "id":1211,
-            "description": "A classic clay pot known for its porous nature, ideal for many types of plants."
+          id: 1,
+          name: "Sofas",
+          description: "Comfortable and stylish sofas for your living room.",
+          status: "Active"
         },
         {
-            "type": "Ceramic Planter",
-            "id":134211,
-            "description": "Elegant and often decorative, ceramic pots come in various colors and designs."
+          id: 2,
+          name: "Dining Tables",
+          description: "Elegant dining tables for family gatherings and dinner parties.",
+          status: "Active"
         },
         {
-            "type": "Concrete Planter",
-            "id":112211,
-            "description": "Sturdy and durable, concrete pots are great for outdoor use and modern aesthetics."
+          id: 3,
+          name: "Beds",
+          description: "Cozy and luxurious beds for a good night's sleep.",
+          status: "Active"
         },
         {
-            "type": "Plastic Pot",
-            "id":122411,
-            "description": "Lightweight and affordable, plastic pots are available in various sizes and colors."
+          id: 4,
+          name: "Wardrobes",
+          description: "Spacious wardrobes to keep your clothes organized.",
+          status: "Active"
         },
         {
-            "type": "Wooden Planter",
-            "id":2243,
-            "description": "Rustic and charming, wooden planters are often used for herbs and flowers."
+          id: 5,
+          name: "Coffee Tables",
+          description: "Stylish coffee tables for your living room decor.",
+          status: "Active"
         },
         {
-            "type": "Metal Planter",
-            "id":13434211,
-            "description": "Sleek and contemporary, metal pots are suitable for both indoor and outdoor settings."
+          id: 6,
+          name: "Bookshelves",
+          description: "Functional bookshelves for your home library or office.",
+          status: "Active"
         },
         {
-            "type": "Ceramic Glazed Pot",
-            "id":12143421,
-            "description": "Ceramic pots with a glossy glaze for a stylish and colorful appearance."
+          id: 7,
+          name: "Office Desks",
+          description: "Efficient office desks for a productive work environment.",
+          status: "Active"
         },
         {
-            "type": "Hanging Basket",
-            "id":1213411,
-            "description": "Typically made of wire or woven materials, used for suspended plants."
+          id: 8,
+          name: "Dressers",
+          description: "Beautiful dressers for your bedroom storage needs.",
+          status: "Active"
         },
         {
-            "type": "Fiberglass Planter",
-            "id":14221211,
-            "description": "Lightweight and versatile, fiberglass pots come in various shapes and sizes."
+          id: 9,
+          name: "Chairs",
+          description: "Comfortable and stylish chairs for various rooms.",
+          status: "Active"
         },
         {
-            "type": "Stone Planter",
-            "id":1242432211,
-            "description": "Natural stone pots add a touch of elegance and are often used for larger plants."
-        }
-    ],
+          id: 10,
+          name: "Outdoor Furniture",
+          description: "Durable and weather-resistant outdoor furniture for your patio or garden.",
+          status: "Active"
+        },
+        {
+          id: 11,
+          name: "Kids Furniture",
+          description: "Adorable and functional furniture for children's rooms.",
+          status: "Active"
+        },
+        {
+          id: 12,
+          name: "Antique Furniture",
+          description: "Vintage and collectible antique furniture pieces for enthusiasts.",
+          status: "Inactive"
+        },
+        {
+          id: 13,
+          name: "Furniture Accessories",
+          description: "Decorative accessories to enhance the look of your furniture.",
+          status: "Inactive"
+        },
+        {
+          id: 14,
+          name: "Modular Furniture",
+          description: "Flexible and customizable modular furniture for modern living spaces.",
+          status: "Inactive"
+        },
+      ],
     storeProducts:[
         {
-            "name": "Spider Plant",
-            "id":1232131312,
-            "description": "A popular indoor plant known for its long, arching green and white striped leaves.",
-            "price": 19.99,
-            "colors_available": ["Green", "Variegated"]
+          id: 1,
+          name: "Elegant Leather Chair",
+          price: 199.99,
+          skuid: "CH001",
+          status: "Active",
+          category: "Living Room",
+          description: "A luxurious leather chair that adds elegance to your living room decor."
         },
         {
-            "name": "Snake Plant",
-            "id":1213212122,
-            "description": "A hardy plant with tall, sword-shaped leaves that thrive in low light conditions.",
-            "price": 24.99,
-            "colors_available": ["Green"]
+          id: 2,
+          name: "Modern Office Chair",
+          price: 149.99,
+          skuid: "CH002",
+          status: "Active",
+          category: "Office",
+          description: "A sleek and comfortable office chair designed for modern workplaces."
         },
         {
-            "name": "Peace Lily",
-            "id":122121312,
-            "description": "An elegant plant with dark green leaves and white, lily-like flowers.",
-            "price": 29.99,
-            "colors_available": ["Green"]
+          id: 3,
+          name: "Vintage Wooden Chair",
+          price: 129.99,
+          skuid: "CH003",
+          status: "Active",
+          category: "Dining Room",
+          description: "A charming wooden chair with a vintage look, perfect for your dining area."
         },
         {
-            "name": "Fiddle Leaf Fig",
-            "id":12132112,
-            "description": "A popular choice for its large, violin-shaped leaves and striking appearance.",
-            "price": 49.99,
-            "colors_available": ["Green"]
+          id: 4,
+          name: "Outdoor Patio Chair",
+          price: 79.99,
+          skuid: "CH004",
+          status: "Active",
+          category: "Outdoor",
+          description: "A durable and stylish chair for your outdoor patio or garden."
         },
         {
-            "name": "Monstera",
-            "id":12132312,
-            "description": "Known for its unique split leaves, this plant adds a tropical touch to any space.",
-            "price": 39.99,
-            "colors_available": ["Green"]
+          id: 5,
+          name: "Kids' Cartoon Chair",
+          price: 49.99,
+          skuid: "CH005",
+          status: "Active",
+          category: "Kids",
+          description: "A fun and colorful chair featuring beloved cartoon characters for kids."
         },
         {
-            "name": "Aloe Vera",
-            "id":121312,
-            "description": "A succulent plant valued for its soothing gel, often used for medicinal purposes.",
-            "price": 14.99,
-            "colors_available": ["Green"]
+          id: 6,
+          name: "Executive High-Back Chair",
+          price: 249.99,
+          skuid: "CH006",
+          status: "Active",
+          category: "Office",
+          description: "A high-back executive chair designed for comfort and professionalism."
         },
         {
-            "name": "Pothos",
-            "id":"4355432",
-            "description": "A trailing vine with heart-shaped leaves, perfect for hanging baskets.",
-            "price": 17.99,
-            "colors_available": ["Green", "Golden"]
+          id: 7,
+          name: "Minimalist Dining Chair",
+          price: 109.99,
+          skuid: "CH007",
+          status: "Active",
+          category: "Dining Room",
+          description: "A minimalistic dining chair that complements various dining table styles."
         },
         {
-            "name": "ZZ Plant",
-            "id":12132132312,
-            "description": "A low-maintenance plant with glossy, dark green leaves.",
-            "price": 22.99,
-            "colors_available": ["Green"]
+          id: 8,
+          name: "Reclining Lounge Chair",
+          price: 179.99,
+          skuid: "CH008",
+          status: "Active",
+          category: "Living Room",
+          description: "A comfortable lounge chair with a reclining feature for relaxation."
         },
         {
-            "name": "Jade Plant",
-            "id":1213122312,
-            "description": "A succulent with thick, fleshy leaves and a tree-like growth habit.",
-            "price": 12.99,
-            "colors_available": ["Green"]
+          id: 9,
+          name: "Mesh Back Task Chair",
+          price: 89.99,
+          skuid: "CH009",
+          status: "Active",
+          category: "Office",
+          description: "A breathable mesh back task chair for ergonomic support during work."
         },
         {
-            "name": "Rubber Plant",
-            "id":12132132112,
-            "description": "Known for its large, glossy leaves and air-purifying qualities.",
-            "price": 27.99,
-            "colors_available": ["Green"]
-        }
-    ],
+          id: 10,
+          name: "Rustic Wooden Rocking Chair",
+          price: 159.99,
+          skuid: "CH010",
+          status: "Active",
+          category: "Outdoor",
+          description: "A classic wooden rocking chair for enjoying outdoor relaxation."
+        },
+        {
+          id: 11,
+          name: "Adjustable Gaming Chair",
+          price: 199.99,
+          skuid: "CH011",
+          status: "Active",
+          category: "Gaming",
+          description: "An adjustable gaming chair designed for extended gaming sessions."
+        },
+        {
+          id: 12,
+          name: "Antique Armchair",
+          price: 219.99,
+          skuid: "CH012",
+          status: "Inactive",
+          category: "Living Room",
+          description: "A vintage-style armchair that adds a touch of nostalgia to your living space."
+        },
+        {
+          id: 13,
+          name: "Industrial Bar Stool",
+          price: 79.99,
+          skuid: "CH013",
+          status: "Inactive",
+          category: "Kitchen",
+          description: "A sturdy industrial-style bar stool for your kitchen or bar area."
+        },
+        {
+          id: 14,
+          name: "Folding Beach Chair",
+          price: 49.99,
+          skuid: "CH014",
+          status: "Inactive",
+          category: "Outdoor",
+          description: "A portable and foldable beach chair for your seaside adventures."
+        },
+        {
+          id: 15,
+          name: "Ergonomic Task Chair",
+          price: 129.99,
+          skuid: "CH015",
+          status: "Inactive",
+          category: "Office",
+          description: "An ergonomic task chair with adjustable features for office comfort."
+        },
+        {
+          id: 16,
+          name: "Classic Baroque Chair",
+          price: 299.99,
+          skuid: "CH016",
+          status: "Inactive",
+          category: "Dining Room",
+          description: "A classic Baroque-style dining chair for a touch of opulence in your dining area."
+        },
+        {
+          id: 17,
+          name: "Bean Bag Chair",
+          price: 69.99,
+          skuid: "CH017",
+          status: "Processing",
+          category: "Living Room",
+          description: "A cozy and versatile bean bag chair for relaxed seating in the living room."
+        },
+        {
+          id: 18,
+          name: "Swivel Desk Chair",
+          price: 119.99,
+          skuid: "CH018",
+          status: "Processing",
+          category: "Office",
+          description: "A swivel desk chair with a modern design for productivity and style."
+        },
+        {
+          id: 19,
+          name: "Adirondack Chair",
+          price: 149.99,
+          skuid: "CH019",
+          status: "Scheduled",
+          category: "Outdoor",
+          description: "A classic Adirondack chair designed for outdoor relaxation and comfort."
+        },
+        {
+          id: 20,
+          name: "Kids' High Chair",
+          price: 59.99,
+          skuid: "CH020",
+          status: "Scheduled",
+          category: "Kids",
+          description: "A child-friendly high chair designed for your little one's comfort during meals."
+        },
+      ]
 }
 
 const productsSlice = createSlice({
@@ -157,9 +301,9 @@ const productsSlice = createSlice({
         const findExistingCategoryToUpdate = state.categories.findIndex(ctgy=>ctgy.id === updatedProductValues.id)
         console.log(findExistingCategoryToUpdate)
         if(findExistingCategoryToUpdate !== -1){
-            state.categories[findExistingCategoryToUpdate] = updatedProductValues
+        state.categories[findExistingCategoryToUpdate] = updatedProductValues
         }
-    }
+    },
    }
 })
 
